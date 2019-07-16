@@ -50,7 +50,8 @@ def login():
 		chrome_options.add_argument('--disable-gpu') #谷歌文档提到需要加上这个属性来规避bug
 		chrome_options.add_argument('--hide-scrollbars') #隐藏滚动条, 应对一些特殊页面
 		chrome_options.add_argument('--headless') #浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
-		driver = webdriver.Chrome('C:/Users/dell/Downloads/chromedriver_win32/chromedriver.exe')
+		chromepath=raw_input("input your chromedriver path")
+		driver = webdriver.Chrome(chromepath)
 		driver.get("https://www.virustotal.com/gui/sign-in")
 		time.sleep(2)
 		#自动点击并输入用户名
